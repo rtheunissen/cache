@@ -35,4 +35,12 @@ class AdapterFactoryTest extends \PHPUnit_Framework_TestCase
     {
         AdapterFactory::get(new \stdClass());
     }
+
+    public function testProvidingInterface()
+    {
+        $driver  = m::mock('Stash\Interfaces\DriverInterface');
+        $adapter = AdapterFactory::get($driver);
+        $adapter = AdapterFactory::get($adapter);
+        $this->assertInstanceOf('Concat\Cache\Adapter\StashAdapter', $adapter);
+    }
 }
