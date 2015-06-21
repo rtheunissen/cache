@@ -11,6 +11,11 @@ use Concat\Cache\CacheInterface;
 class StashAdapter implements CacheInterface
 {
     /**
+     * @var \Stash\Interfaces\DriverInterface $cache
+     */
+    private $cache;
+
+    /**
      * @var string Used when converting string keys to array keys.
      */
     private $delimiter;

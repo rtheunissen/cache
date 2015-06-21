@@ -11,6 +11,11 @@ use Concat\Cache\CacheInterface;
 class DoctrineAdapter implements CacheInterface
 {
     /**
+     * @var \Doctrine\Common\Cache\CacheProvider $cache
+     */
+    private $cache;
+
+    /**
      * @param CacheProvider $cache
      */
     public function __construct(CacheProvider $cache)

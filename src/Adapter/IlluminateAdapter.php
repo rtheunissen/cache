@@ -11,6 +11,11 @@ use Concat\Cache\CacheInterface;
 class IlluminateAdapter implements CacheInterface
 {
     /**
+     * @var \Illuminate\Contracts\Cache\Store $cache
+     */
+    private $cache;
+
+    /**
      * @param Store $cache
      */
     public function __construct(Store $cache)
