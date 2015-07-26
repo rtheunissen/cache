@@ -12,3 +12,16 @@
 ```bash
 composer require rtheunissen/cache
 ```
+
+## Usage
+
+Supported cache providers are:
+    - [Doctrine - CacheProvider](https://github.com/doctrine/cache/blob/master/lib/Doctrine/Common/Cache/CacheProvider.php)
+    - [Illuminate - Store](https://github.com/illuminate/contracts/blob/master/Cache/Store.php)
+    - [Stash - AbstractDriver](https://github.com/tedious/Stash/blob/master/src/Stash/Driver/AbstractDriver.php)
+
+The easiest way to create an adapter is to use the AdapterFactory.
+
+```php
+$cache = AdapterFactory::get($provider);
+```
